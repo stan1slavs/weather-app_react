@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import Block1 from './components/block1';
+import Block2 from './components/block2';
+import Block3 from './components/block3';
+import Block4 from './components/block4';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="app">
+      <h3 className="app-title">Д у ш н и л а</h3>
+      <div className="layout-container">
+        <Block1 />
+        <Block2 />
+        <div className="app-block-3-4">
+          <Block3 />
+          <Block4 />
+        </div>
+      </div>
+    </section>
   );
 }
-
-export default App;

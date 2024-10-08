@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  height: 100%;
+  font-family: "Arial";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.app-title {
+  word-spacing: 10px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.layout-container {
+  display: grid;
+  gap: 10px;
+  max-width: 1200px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "block1 block2"
+    "block3-4 block2";
+}
+
+.app-block {
+  border-radius: 15px;
+  padding: 40px;
+  display: flex;
+}
+
+.app-block-1 {
+  grid-area: block1;
+  flex-direction: column;
+  gap: 60px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 20px;
+}
+
+.app-block-2 {
+  grid-area: block2;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+
+h1{
+  font-size: 72px;
+}
+
+span {
+  display: block;
+  font-size: 20px;
+}
+
+#first-span {
+  margin-bottom: 50px;
+}
+
+.app-block-3-4 {
+  grid-area: block3-4;
+  display: flex;
+  gap: 10px;
+}
+
+.app-block-3 {
+  flex: 1 1 50%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  flex-direction: column;
+  gap: 150px;
+}
+
+button {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.app-block-4 {
+  flex: 1 1 50%;
+  background-color: #fff;
+  padding: 0;
+  border: 1px solid #000;
+  height: 100%;
+  background-image: url("../public/logo.png");
+  background-repeat: no-repeat;
+  background-position: bottom -2em right -3em;
+  background-size: 70%;
+}
+
+@media (min-width: 2560px) {
+  h2 {
+    font-size: 72px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 96px;
   }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  span, p, button {
+    font-size: 32px;
+  }
+
+  #first-span {
+    margin-bottom: 100px;
+  }
+
+  .app-block-4 {
+    background-size: 80%;
+  }
+
+  .app-block-3 {
+    gap: 230px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .layout-container {
+    max-width: 768px;
+  }
+
+  .app-block {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .app-block-4 {
+    background-size: 80%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+  button {
+    width: 80%;
+  }
+
+  .layout-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "block1"
+      "block2"
+      "block3-4";
+    gap: 0px;
+  }
+
+  .app-block {
+    border-radius: 0px;
+    border: none;
+    padding: 20px;
+  }
+
+  .app-block-3-4 {
+    display: block;
+  }
+
+  .app-block-3 {
+    gap: 50px;
+    justify-content: space-between;
+  }
+
+  .app-block-4 {
+    background-size: 40%;
+    background-position: bottom -1em right -1.5em;
+    border-bottom: 1px solid black;
+  }
+
 }

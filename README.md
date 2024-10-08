@@ -1,46 +1,17 @@
-# Getting Started with Create React App
+## Тестовое задание
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[макет из Figma](https://www.figma.com/design/2ZN3BIJGaLjKomcIRIlIy0/Dushnila)
 
-## Available Scripts
+1. Реализованы все пункты функционала приложения
 
-In the project directory, you can run:
+- На старте приложение должно отправить запрос для получения погодных данных.
+- Каждые 60 секунд происходит повторный запрос и обновляются значения в стейт-менеджере (используется Context API).
+- В зависимости от погодных данных отрисовывается:
+	- зеленый блок с информативными сообщениями «Душнила доволен вами» и «Все показатели в норме», когда температура меньше 27 градусов и концентрация CO2 меньше 800 ppm, а также отрисовывается блок с погодными данными с бело-зеленым градиентом;
+	- красный блок с информативными сообщениями «Душнила недоволен вами» и «Температура превышена», когда температура выше 27 градусов, а концентрация CO2 меньше 800 ppm, а также отрисовывается блок с погодными данными с бело-красным градиентом;
+	- красный блок с информативными сообщениями «Душнила недоволен вами» и «CO2 превышает норму», когда температура меньше 27 градусов, а концентрация CO2 больше 800 ppm, а также отрисовывается блок с погодными данными с бело-красным градиентом;
+	- красный блок с информативными сообщениями «Душнила недоволен вами» и «Показатели превышены», когда температура больше 27 градусов и концентрация CO2 больше 800 ppm, а также отрисовывается блок с погодными данными с бело-красным градиентом.
+- Приложение имеет адаптив для мобильных устройств и 4К-разрешению.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Написаны тесты к компонентам ```Block1 ``` и ```Block2 ```
+3. Добавлены автоматизированные инструменты проверки кода ```eslint``` и ```prettier```
